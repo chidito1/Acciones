@@ -1,0 +1,75 @@
+{ 
+  "Version": "1.1", 
+  "Message": "TEST PAY+SSL MEXICO by @chidito1gc", 
+  "Servers": [ 
+  { 
+      "Name": "Telcel (MX01 | SSL)", 
+      "SSHHost": "assets.portal.shop", 
+      "SSHPort": "22",
+      "DropBear": "", 
+      "SSLPort": "443", 
+      "ProxyPort": "80" 
+    },   
+    { 
+      "Name": "Telcel WS (MX01  | SSL)", 
+      "SSHHost": "oscar.chidito1-gc.com", 
+      "SSHPort": "80", 
+      "DropBear": "", 
+      "SSLPort": "443", 
+      "ProxyPort": "80" 
+    }, 
+    { 
+      "Name": "Argentina SSL  (AR02 | SSL)", 
+      "SSHHost": "www.argentina.gob.ar", 
+      "SSHPort": "22",
+      "DropBear": "", 
+      "SSLPort": "443", 
+      "ProxyPort": "80" 
+   } 
+  ], 
+   
+"DNS": [
+  
+     {
+      "Name": "DNS GOOGLE 1",
+      "DNSname": "8.8.8.8"
+    },
+  {  
+    "Name": "DNS GOOGLE 2",
+      "DNSname": "8.8.4.4"
+    },
+      {  
+    "Name": "DNS CLOUDFARE 1",
+      "DNSname": "1.1.1.1"
+    },
+  {  
+    "Name": "DNS CLOUDFARE 2",
+      "DNSname": "1.0.0.1"
+    }
+  ],
+
+  "Tweaks": [ 
+    { 
+      "Name": "SSL (telcel) ", 
+      "SSL": true, 
+      "Direct": false, 
+     "Slowchave": "", 
+      "Slowhost": "OSCAR sni://assets.portal.shop/ HTTP/1.1\r\nHost: v.chidito1-gc.com\r\nUpgrade: websocket\r\nConnection: Keep-Alive\nUser-Agent: [ua]\nReferer: \r\n\r\n", 
+      "Payload": "assets.portal.shop", 
+      "CustomProxy": true, 
+      "ProxyHost": "assets.portal.shop", 
+      "ProxyPort": "443" 
+    },
+    {
+      "Name": "ARGENTINA SSL ",
+      "SSL": true,
+      "Direct": false,
+      "Slowchave": "",
+      "Slowhost": "UNLOCK h2://www.argentina.gob.ar HTTP/1.1[crlf]Host: v.chidito1-gc.com[crlf]Upgrade: websocket[crlf][crlf]", 
+      "Payload": "www.argentina.gob.ar", 
+      "CustomProxy": true, 
+      "ProxyHost": "www.argentina.gob.ar", 
+      "ProxyPort": "443"
+     }
+  ] 
+}
